@@ -3,5 +3,7 @@ git:
 	@git add .
 	@git commit -m "$(m)"
 	@git push origin main
-doc:
-	@docker-compose up --build -d
+docker:
+	@docker-compose down
+	@docker-compose build --no-cache
+	@docker-compose up -d
